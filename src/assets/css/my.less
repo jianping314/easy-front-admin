@@ -1,0 +1,181 @@
+@import '../../theme/index.less';
+
+/*--------global style--------*/
+
+//flex layout
+.flexbox{
+  display: flex;
+  display: -webkit-flex;
+  box-align: center;
+  align-items: center;
+  justify-content:center;
+  -webkit-box-align: center;
+}
+
+.flexbox-normal{
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-box-align: flex-start;
+  -webkit-align-items: flex-start;
+  align-items: flex-start;
+}
+
+//img 100% width
+.img-auto img{ width: 100%;}
+
+//float layout & clear float
+.pull-left{ float: left}
+.pull-right{ float: right}
+.clearfix:after{ content: ''; display: block; clear: both;}
+
+//gap layout
+.mar-l-20{ margin-left: 20px;}
+
+//text align
+.left-text{ text-align: left !important;}
+.center-text{ text-align: center;}
+.right-text{ text-align: right;}
+
+//text color
+.gray-text{ color: @gray-color};
+
+//text overflow
+.text-overflow(){
+  overflow: hidden; white-space: nowrap; text-overflow: ellipsis;
+}
+
+//main content width layout
+.w1110{ width: 1110px; margin: 0 auto;}
+
+//title divider style
+.divider{ position: relative;}
+.divider span{ position: relative; z-index: 2; background: @white-color; display: inline-block; padding: 0 8px;}
+.divider:before{ content: ''; border-bottom: 1px solid @border-color-base; position: absolute; top: 9px; left: 0; width: 100%;}
+
+//avatar common style
+.avatar{ border-radius: 100%; overflow: hidden; line-height: 1; font-size: 0; display: inline-block; vertical-align: middle;}
+.avatar img{ width: 100%; height: 100%;}
+
+
+/*--------page style--------*/
+
+//login page
+.login{ height: 100%; background: @head-bg;}
+.login-content{ overflow: hidden;width: 714px; margin-top: 10px; height: 399px;border-radius: 6px; background: @white-color; box-shadow:0 0 30px  fade(darken(@head-bg, 30%), 20%);}
+.login-graphic{ width: 356px; line-height: 1; font-size: 0;}
+.login-form{ width: 358px; height: 399px;}
+.login-form .ivu-form{ width: 80%;}
+.login-form .ivu-btn-primary{ margin-top: 20px;}
+
+//home page
+.home> header{ background: @head-bg; height: 60px; line-height: 60px; color: @white-color;}
+.home> header .logo{ float: left; margin-top: 10px;}
+.home> header .logo img{ width: 150px;}
+header .pull-right .avatar{ width: 22px; height: 22px;}
+header .pull-right >span, header .pull-right >a{ display: inline-block; vertical-align: middle; color: #fff; margin-left: 10px;}
+header .pull-right a.icon{ font-size: 22px;}
+header .pull-right a:hover{ color: @link-hover-color;}
+
+.home-content{ background: @white-color; padding: 26px 28px; margin: 54px auto;}
+.home-content>.pull-right{ width:246px; padding-bottom: 16px; border: 1px solid @border-color-base; border-radius: @border-radius-base; position: relative;}
+.home-user-box{ padding:60px 20px 36px;}
+.home-user-box .avatar{ width: 90px; height: 90px;}
+.home-user-box p{ padding-top: 10px; font-size: 16px;}
+.home-content>.pull-right h3{ font-size: 14px; color: @gray-color; margin-bottom: 12px;}
+.home-content>.pull-right .icon-edit{ font-size: 20px; position: absolute; right: 10px; top: 10px;}
+
+.home-list{ width: 778px;}
+.home-list>li{ float: left; width: 375px; margin:0 28px 28px 0;}
+.home-list>li>a{ display: block; text-align: center;}
+.home-list>li:nth-child(2n){ margin-right: 0;}
+.home-list-icon{ display: block; width: 375px; height:182px; background: url(../../assets/images/bg-home-icon.jpg) no-repeat center;
+  border-radius: @border-radius-base @border-radius-base 0 0; overflow: hidden;}
+.home-list-enter{ padding: 32px 20px;border-radius:0 0 @border-radius-base @border-radius-base ; border: 1px solid @border-color-base; border-top:0; position: relative; overflow: hidden;}
+.home-list-title h4,.home-list-hover{ font-size: 18px;}
+.home-list-title h4{ color: @text-color}
+.home-list-title h3{ font-size: 24px; font-family: 'NeoSans'; font-weight: normal;.text-overflow;}
+.home-list-hover{ background:fade(@white-color, 95%);transition: all linear 0.3s; position: absolute; left: 0; bottom: -96px; padding: 42px 20px; z-index: 2; width: 100%;}
+.home-list>li>a:hover .home-list-hover{ bottom: 0;}
+.home-list>li>a:hover{ box-shadow: 0 2px 6px fade(darken(@text-color, 30%), 16%);border-radius:0 0 @border-radius-base @border-radius-base;}
+
+.home-list-setting .home-list-icon{ border: 1px solid #6761a8; border-bottom: 0; background-position: 0 0;}
+.home-list-setting .home-list-hover{ color: #6761a8;}
+.home-list-setting:hover .home-list-enter{padding: 32px 19px 31px; border: 2px solid #6761a8; border-top:0; }
+
+.home-list-crm .home-list-icon{ border: 1px solid #009b72; border-bottom: 0; background-position: 0 -182px;}
+.home-list-crm .home-list-hover{ color: #009b72;}
+.home-list-crm:hover .home-list-enter{padding: 32px 19px 31px; border: 2px solid #009b72; border-top:0; }
+
+.home-list-goods .home-list-icon{ border: 1px solid #f26430; border-bottom: 0; background-position: 0 -364px;}
+.home-list-goods .home-list-hover{ color: #f26430;}
+.home-list-goods:hover .home-list-enter{padding: 32px 19px 31px; border: 2px solid #f26430; border-top:0; }
+
+.home-list-order .home-list-icon{ border: 1px solid #0f82f6; border-bottom: 0; background-position: 0 -546px;}
+.home-list-order .home-list-hover{ color: #0f82f6;}
+.home-list-order:hover .home-list-enter{padding: 32px 19px 31px; border: 2px solid #0f82f6; border-top:0; }
+
+.home footer{ background:@head-bg; line-height: 74px; color: fade(@white-color, 70%);}
+.home footer .w1110{background:url(../../assets/images/bg-footer.png) no-repeat right center;}
+
+//common page style
+.page{ height: 100%; }
+.page> header{ background: @head-bg; position: fixed; z-index: 22; top: 0; left: 0; width: 100%; height: 60px; line-height: 60px; color: @white-color; padding: 0 20px;}
+.page> header .logo{ margin-top: 10px; line-height: 1;}
+.page> header >p.pull-left{ font-size: 14px; padding-top: 10px; line-height: 1.3; padding-left: 10px;}
+.page> header >p.pull-left span{ display: block;}
+
+.main-wrap{ padding-left: 200px; width: 100%; padding-top: 60px; position: relative; min-height: 100%;  background: @white-color;}
+.nav-wrap{ width: 200px; position: fixed; z-index: 20; top: 60px; left: 0; height: 100%; background: @white-color;}
+.nav-wrap .ivu-menu{ height: 100%; overflow-y: auto; padding-top: 10px;}
+.ivu-menu,.ivu-menu-item,.ivu-menu-vertical .ivu-menu-item-group-title{ font-size: 13px;}
+.ivu-menu-vertical .ivu-menu-submenu .ivu-menu-item {  padding-left: 53px;  }
+
+.ivu-menu-submenu-title > i.icon, .ivu-menu-submenu-title span > i.icon{ font-size: 20px;margin-right: 6px; vertical-align: middle;}
+.ivu-menu-vertical .ivu-menu-submenu-title-icon {  top: 2px;  }
+
+.ivu-menu-item-active .ivu-menu-submenu-title{ color: @primary-color;}
+
+.main-content{ padding: 26px 36px 70px 36px; min-height: 100%;  background: @white-color; width: 100%; }
+.main-content footer{ height: 70px; line-height: 70px; position: absolute; bottom: 0; left: 0; width: 100%; padding: 0 36px 0 236px; color:@gray-color; font-size: 12px; }
+.main-content footer>.pull-right{ padding-top: 17px; line-height: 1;}
+
+.main-content-box{}
+.page-h2{ font-size: 24px; font-weight: normal; padding-bottom: 30px;}
+.main-content-top .ivu-input,.main-content-top .ivu-select-selection{ border-radius: 32px;}
+.ivu-select-item{ line-height: 1.3;}
+
+
+/*--------iconfont style--------*/
+@font-face {
+  font-family: 'iconfont';  /* project id 446474 */
+  src: url('//at.alicdn.com/t/font_446474_gfwqsqdjvl56zuxr.eot');
+  src: url('//at.alicdn.com/t/font_446474_gfwqsqdjvl56zuxr.eot?#iefix') format('embedded-opentype'),
+  url('//at.alicdn.com/t/font_446474_gfwqsqdjvl56zuxr.woff') format('woff'),
+  url('//at.alicdn.com/t/font_446474_gfwqsqdjvl56zuxr.ttf') format('truetype'),
+  url('//at.alicdn.com/t/font_446474_gfwqsqdjvl56zuxr.svg#iconfont') format('svg');
+}
+
+.icon {
+  font-family:"iconfont" !important;
+  font-size:16px;
+  font-style:normal;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-user:before { content: "\e789"; }
+
+.icon-password:before { content: "\e78a"; }
+
+.icon-quit:before { content: "\e78b"; }
+
+.icon-edit:before { content: "\e78c"; }
+
+.icon-setting:before { content: "\e78d"; }
+
+.icon-promotion:before { content: "\e78e"; }
+
+.icon-banner:before { content: "\e78f"; }
+
+.icon-cat:before { content: "\e790"; }
