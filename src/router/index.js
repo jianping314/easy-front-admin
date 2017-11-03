@@ -6,6 +6,9 @@ import VueRouter from 'vue-router';
 import home from './home';
 import login from './login';
 import setting from './setting';
+import client from './client';
+import goods from './goods';
+import order from './order';
 import store from '../store';
 
 Vue.use(VueRouter);
@@ -19,6 +22,9 @@ const routes = [
   ...home,
   ...login,
   ...setting,
+  ...client,
+  ...goods,
+  ...order,
   {
     path: '*',
     component(resolve) {
