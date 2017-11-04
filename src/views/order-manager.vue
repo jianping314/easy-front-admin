@@ -32,9 +32,9 @@
                  </div>
                  <div class="pull-right drop-down-wrap">
 
-                     <Button type="primary" shape="circle" @click="advanceSearch=!advanceSearch">高级搜索</Button>
+                     <Button type="primary" shape="circle" @click="popupDown">高级搜索</Button>
 
-                     <div class="drop-down" :class="advanceSearch?'show':'hide'">
+                     <div class="drop-down" :class="[hide, visualHidden]">
                        <div class="ivu-poptip-arrow"></div>
                        <Form :model="formTop" :label-width="100">
                          <FormItem label="下单时间" >
@@ -47,8 +47,8 @@
                            <Input placeholder="请输入商品名称/编码" ></Input>
                          </FormItem>
                          <div class="center-text pad-b-20">
-                           <Button type="primary" @click="advanceSearch=!advanceSearch">确定</Button>
-                           <Button type="ghost" @click="advanceSearch=!advanceSearch">取消</Button>
+                           <Button type="primary" @click="popupDown">确定</Button>
+                           <Button type="ghost" @click="popupDown">取消</Button>
                          </div>
                        </Form>
                      </div>
@@ -112,7 +112,8 @@
       return {
         theme2: 'light',
         value4: '',
-        advanceSearch: false,
+        hide: 'hide',
+        visualHidden: 'visualHidden',
         formTop: {
           input1: '',
           input2: '',
@@ -275,6 +276,19 @@
       ]),
       getCustomerInfo () {
         this.UPDATE_CUSTOMER_INFO({});
+      },
+      popupDown() {
+          if (this.hide) {
+            this.hide = '';
+            setTimeout(() => {
+              this.visualHidden = '';
+            }, 100);
+          } else {
+            this.visualHidden = 'visualHidden';
+            setTimeout(() => {
+              this.hide = 'hide';
+            }, 500);
+          }
       }
     }
   };

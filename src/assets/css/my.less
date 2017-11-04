@@ -223,7 +223,7 @@ header .pull-right a:hover{ color: @link-hover-color;}
 .drop-down-wrap{ position: relative;}
 .drop-down{ position: absolute; top: 46px; right: 0; background: #fff; z-index: 1060;
   border-radius: 4px;
-  box-shadow: 0 1px 6px rgba(0,0,0,.2); transition: .3s; min-width: 500px; padding: 30px 20px 0 ;transform-origin: center top 0px;}
+  box-shadow: 0 1px 6px rgba(0,0,0,.2); opacity: 1; transition:all .5s; min-width: 500px; padding: 30px 20px 0 ;transform-origin: center top 0px;}
 .drop-down .ivu-poptip-arrow{top: -6px; right: 34px;
   border-width: 0 5px 5px;
   border-bottom-color: hsla(0,0%,85%,.5);}
@@ -232,11 +232,12 @@ header .pull-right a:hover{ color: @link-hover-color;}
   margin-left: -5px;
   border-top-width: 0;
   border-bottom-color: #fff;}
+.visualHidden{ opacity: 0;}
 
 .order-info{justify-content: flex-start;}
 .order-info>div{ width: 20%; padding-bottom: 16px;}
 
-.pad-t-34 .ivu-card-body{ min-height: 120px;}
+.pad-t-34 .ivu-card-body{ min-height: 120px; overflow: hidden;}
 
 
 /*--------iconfont style--------*/
