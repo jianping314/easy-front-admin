@@ -12,6 +12,11 @@
          </Menu>
        </div>
        <div class="main-content">
+         <Breadcrumb>
+           <BreadcrumbItem to="/">首页</BreadcrumbItem>
+           <BreadcrumbItem to="/components/breadcrumb">客户管理</BreadcrumbItem>
+           <BreadcrumbItem>客户管理</BreadcrumbItem>
+         </Breadcrumb>
          <div class="main-content-box">
              <h2 class="page-h2">客户管理</h2>
 

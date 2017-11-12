@@ -20,6 +20,11 @@
          </Menu>
        </div>
        <div class="main-content">
+         <Breadcrumb>
+           <BreadcrumbItem to="/">首页</BreadcrumbItem>
+           <BreadcrumbItem to="/components/breadcrumb">商品管理</BreadcrumbItem>
+           <BreadcrumbItem>商品分类设置</BreadcrumbItem>
+         </Breadcrumb>
          <div class="main-content-box">
              <h2 class="page-h2">商品分类设置
              </h2>

@@ -37,18 +37,34 @@
        </div>
        <div class="main-content">
          <div class="main-content-box">
+           <div class="main-content-header">
+             <Breadcrumb>
+               <BreadcrumbItem to="/">首页</BreadcrumbItem>
+               <BreadcrumbItem to="/components/breadcrumb">官网设置</BreadcrumbItem>
+               <BreadcrumbItem>轮播图设置</BreadcrumbItem>
+             </Breadcrumb>
              <h2 class="page-h2">轮播图设置</h2>
-             <div class="main-content-top clearfix">
-               <Button type="primary" shape="circle" class="pull-left" icon="plus">新增</Button>
-               <Input v-model="value4"  icon="search" class="pull-right mar-l-20" placeholder="搜索" style="width: 200px"></Input>
-               <Select v-model="model1" class="pull-right" style="width:200px">
-                 <Option v-for="item in cityList" :value="item.value" :key="item.value">{{ item.label }}</Option>
-               </Select>
-             </div>
-           <Table :columns="columns1" :data="data1"></Table>
-           <div class="pad-t-14 clearfix">
-             <Page :total="100" class="right-text" show-sizer></Page>
            </div>
+
+           <div class="main-content-body">
+             <Card :bordered="false" dis-hover>
+               <div class="main-content-top clearfix">
+                 <Button type="primary" shape="circle" class="pull-left" icon="plus">新增</Button>
+                 <Input v-model="value4"  icon="search" class="pull-right mar-l-20" placeholder="搜索" style="width: 200px"></Input>
+                 <Select v-model="model1" class="pull-right" style="width:200px">
+                   <Option v-for="item in cityList" :value="item.value" :key="item.value">{{ item.label }}</Option>
+                 </Select>
+               </div>
+               <Table :columns="columns1" :data="data1"></Table>
+               <div class="pad-t-24 clearfix">
+                 <Page :total="100" class="right-text" show-sizer></Page>
+               </div>
+             </Card>
+
+           </div>
+
+
+
          </div>
          <footer class="clearfix">
             <span class="pull-left">2017 © Easy Front</span>

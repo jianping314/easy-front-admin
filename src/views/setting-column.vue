@@ -36,15 +36,24 @@
          </Menu>
        </div>
        <div class="main-content">
-         <div class="main-content-box">
-             <h2 class="page-h2">栏目设置</h2>
+         <div class="main-content-header">
+         <Breadcrumb>
+           <BreadcrumbItem to="/">首页</BreadcrumbItem>
+           <BreadcrumbItem to="/components/breadcrumb">官网设置</BreadcrumbItem>
+           <BreadcrumbItem>栏目设置</BreadcrumbItem>
+         </Breadcrumb>
+           <h2 class="page-h2">栏目设置</h2>
+         </div>
+         <div class="main-content-body">
+           <Card :bordered="false" dis-hover>
              <div class="main-content-top clearfix">
                <Button type="primary" shape="circle" class="pull-left" icon="plus">新增</Button>
              </div>
            <Table :columns="columns1" :data="data1"></Table>
-           <div class="pad-t-14 clearfix">
+           <div class="pad-t-24 clearfix">
              <Page :total="100" class="right-text" show-sizer></Page>
            </div>
+           </Card>
          </div>
          <footer class="clearfix">
             <span class="pull-left">2017 © Easy Front</span>

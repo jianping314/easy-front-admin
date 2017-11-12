@@ -36,17 +36,23 @@
          </Menu>
        </div>
        <div class="main-content">
-         <div class="main-content-box">
-             <h2 class="page-h2">修改栏目
+         <div class="main-content-header">
+         <Breadcrumb>
+           <BreadcrumbItem to="/">首页</BreadcrumbItem>
+           <BreadcrumbItem to="/components/breadcrumb">官网设置</BreadcrumbItem>
+           <BreadcrumbItem>修改栏目</BreadcrumbItem>
+         </Breadcrumb>
+           <h2 class="page-h2">修改栏目
              <div class="page-submit">
                <Button type="primary">保存</Button>
                <Button>取消</Button>
              </div>
-             </h2>
-            <h3 class="page-h3">
-              栏目名称
-            </h3>
+           </h2>
+         </div>
 
+         <div class="main-content-body">
+           <Card :bordered="false" dis-hover>
+             <p slot="title">栏目名称</p>
            <Row>
              <Col span="8">
              <Form :model="formTop" label-position="top" >
@@ -56,7 +62,9 @@
              </Form>
              </Col>
            </Row>
+           </Card>
 
+           <Card :bordered="false" dis-hover>
            <Tabs value="name1">
              <TabPane label="商品选择" name="name1">
                <div class="pad-b-20 clearfix">
@@ -69,7 +77,7 @@
                </div>
              </TabPane>
            </Tabs>
-
+           </Card>
          </div>
          <footer class="clearfix">
             <span class="pull-left">2017 © Easy Front</span>
@@ -98,7 +106,7 @@
       </div>
 
       <Table :columns="columns1" :data="data1"></Table>
-      <div class="pad-t-14 clearfix">
+      <div class="pad-t-24 clearfix">
         <Page :total="100" class="right-text" show-sizer></Page>
       </div>
 
