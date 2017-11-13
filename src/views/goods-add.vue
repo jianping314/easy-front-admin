@@ -20,22 +20,24 @@
          </Menu>
        </div>
        <div class="main-content">
+         <div class="main-content-header">
          <Breadcrumb>
            <BreadcrumbItem to="/">首页</BreadcrumbItem>
            <BreadcrumbItem to="/components/breadcrumb">商品管理</BreadcrumbItem>
            <BreadcrumbItem>新增商品</BreadcrumbItem>
          </Breadcrumb>
-         <div class="main-content-box">
-             <h2 class="page-h2">新增商品
-               <div class="page-submit">
-                 <Button type="primary">保存</Button>
-                 <Button>取消</Button>
-               </div>
-             </h2>
+           <h2 class="page-h2">新增商品
+             <div class="page-submit">
+               <Button type="primary">保存</Button>
+               <Button>取消</Button>
+             </div>
+           </h2>
+         </div>
 
-           <h3 class="page-h3">
-             基础信息
-           </h3>
+
+         <div class="main-content-body">
+           <Card :bordered="false" dis-hover>
+             <p slot="title">基础信息</p>
            <Form :model="formTop" label-position="top" >
              <Row :gutter="16">
                <Col span="8">
@@ -66,18 +68,17 @@
                </Col>
              </Row>
            </Form>
+           </Card>
 
-           <h3 class="page-h3 page-h3-b border-none pad-t-14 clearfix">
-             商品规格
-             <div class="pull-right">
-               <Button type="ghost"  shape="circle"><Icon type="plus"></Icon> 新增</Button>
-             </div>
-           </h3>
+           <Card :bordered="false" dis-hover>
+             <p slot="title">商品规格</p>
+             <Button slot="extra" type="ghost"  shape="text"><Icon type="plus"></Icon> 新增</Button>
+
            <Table :columns="columns1" :data="data1"></Table>
+           </Card>
 
-           <h3 class="page-h3 pad-t-34">
-             商品图片 <span class="gray-text font-14">最多20张，默认第一张图片作为主图，可以拖动图片调整</span>
-           </h3>
+           <Card :bordered="false" dis-hover>
+             <p slot="title"> 商品图片 <span class="gray-text font-14">最多20张，默认第一张图片作为主图，可以拖动图片调整</span></p>
            <div class="goods-upload-list" v-for="item in uploadList">
              <template v-if="item.status === 'finished'">
                <img :src="item.url">
@@ -107,13 +108,13 @@
            <Modal title="查看图片" v-model="visible">
              <img :src="'https://o5wwk8baw.qnssl.com/' + imgName + '/large'" v-if="visible" style="width: 100%">
            </Modal>
+           </Card>
 
-           <h3 class="page-h3 pad-t-34">
-             商品详情
-           </h3>
+             <Card :bordered="false" dis-hover>
+               <p slot="title">商品详情</p>
            <textarea id="articleEditor"></textarea>
 
-
+           </Card>
          </div>
          <footer class="clearfix">
             <span class="pull-left">2017 © Easy Front</span>

@@ -20,23 +20,24 @@
          </Menu>
        </div>
        <div class="main-content">
+         <div class="main-content-header">
          <Breadcrumb>
            <BreadcrumbItem to="/">首页</BreadcrumbItem>
            <BreadcrumbItem to="/components/breadcrumb">商品管理</BreadcrumbItem>
            <BreadcrumbItem>商品分类设置</BreadcrumbItem>
          </Breadcrumb>
-         <div class="main-content-box">
-             <h2 class="page-h2">商品分类设置
-             </h2>
+           <h2 class="page-h2">商品分类设置
+           </h2>
+         </div>
 
-           <h3 class="page-h3">
-             商品分类设置
-           </h3>
+         <div class="main-content-body">
+           <Card :bordered="false" dis-hover>
+             <p slot="title">商品分类设置</p>
            <div>
              <Tree :data="data5" :render="renderContent"></Tree>
            </div>
 
-
+           </Card>
 
          </div>
          <footer class="clearfix">

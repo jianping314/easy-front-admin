@@ -12,18 +12,22 @@
          </Menu>
        </div>
        <div class="main-content">
+         <div class="main-content-header">
          <Breadcrumb>
            <BreadcrumbItem to="/">首页</BreadcrumbItem>
            <BreadcrumbItem to="/components/breadcrumb">订单管理</BreadcrumbItem>
            <BreadcrumbItem>订单详情</BreadcrumbItem>
          </Breadcrumb>
-         <div class="main-content-box">
-             <h2 class="page-h2">订单详情
-               <div class="page-submit">
-                 <Button>返回</Button>
-               </div>
-             </h2>
+           <h2 class="page-h2">订单详情
+             <div class="page-submit">
+               <Button>返回</Button>
+             </div>
+           </h2>
+         </div>
 
+
+         <div class="main-content-body">
+           <Card :bordered="false" dis-hover>
            <Tabs value="name1">
              <TabPane label="订单详情" name="name1">
 
@@ -102,7 +106,7 @@
 
 
 
-
+</Card>
          </div>
          <footer class="clearfix">
             <span class="pull-left">2017 © Easy Front</span>

@@ -20,14 +20,16 @@
          </Menu>
        </div>
        <div class="main-content">
+         <div class="main-content-header">
          <Breadcrumb>
            <BreadcrumbItem to="/">首页</BreadcrumbItem>
            <BreadcrumbItem to="/components/breadcrumb">商品管理</BreadcrumbItem>
            <BreadcrumbItem>商品列表</BreadcrumbItem>
          </Breadcrumb>
-         <div class="main-content-box">
-             <h2 class="page-h2">商品列表</h2>
-
+           <h2 class="page-h2">商品列表</h2>
+         </div>
+         <div class="main-content-body">
+           <Card :bordered="false" dis-hover>
 
                <div class="pad-b-20 clearfix">
                  <div class="pull-left">
@@ -61,12 +63,12 @@
                </div>
 
                <Table :columns="columns1" :data="data1"></Table>
-               <div class="pad-t-14 clearfix">
+               <div class="pad-t-24 clearfix">
                  <Page :total="100" class="right-text" show-sizer></Page>
                </div>
 
 
-
+</Card>
          </div>
          <footer class="clearfix">
             <span class="pull-left">2017 © Easy Front</span>
