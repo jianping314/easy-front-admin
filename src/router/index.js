@@ -9,6 +9,7 @@ import setting from './setting';
 import client from './client';
 import goods from './goods';
 import order from './order';
+import form from './form';
 import store from '../store';
 
 Vue.use(VueRouter);
@@ -25,6 +26,7 @@ const routes = [
   ...client,
   ...goods,
   ...order,
+  ...form,
   {
     path: '*',
     component(resolve) {
