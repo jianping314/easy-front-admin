@@ -36,6 +36,7 @@
 .pad-t-24{ padding-top: 24px;}
 .pad-t-34{ padding-top: 34px;}
 .pad-b-20{ padding-bottom: 20px;}
+.pad-b-10{ padding-bottom: 10px;}
 .pad-tb-20{ padding: 20px 0;}
 
 //text align
@@ -46,7 +47,8 @@
 
 //text size
 .font-14{ font-size: 12px !important; font-weight: normal;}
-.font-20{ font-size: 24px;}
+.font-20{ font-size: 20px;}
+.font-24{ font-size: 24px;}
 
 //text color
 .gray-text{ color: @gray-color};
@@ -226,6 +228,7 @@ header .pull-right a.icon-alert{ color: #fff; font-size: 24px; }
 .page> header >p.pull-left{ font-size: 14px; padding-top: 10px; line-height: 1.3; padding-left: 10px;}
 .page> header >p.pull-left span{ display: block;}
 
+/*common page nav*/
 .main-wrap{ padding-left: 200px; width: 100%; padding-top: 60px; position: relative; min-height: 100%; }
 .nav-wrap{ width: 200px; position: fixed; z-index: 20; top: 60px; left: 0; height: 100%; background: @tooltip-color;}
 .nav-wrap .ivu-menu{ height: 100%; overflow-y: auto; padding-top: 10px; box-shadow: 2px 0 6px @shadow-color ;}
@@ -242,8 +245,9 @@ header .pull-right a.icon-alert{ color: #fff; font-size: 24px; }
 
 .ivu-menu-item-active .ivu-menu-submenu-title{ color: @primary-color;}
 
+/*common page main content*/
 .main-content{ padding: 0 0 70px 0; min-height: 100%;  width: 100%; }
-.main-content footer{ height: 70px; line-height: 70px; position: absolute; bottom: 0; left: 0; width: 100%; padding: 0 36px 0 236px; color:@gray-color; font-size: 12px; }
+.main-content footer{ height: 70px; line-height: 70px; position: absolute; bottom: 0; left: 0; width: 100%; padding: 0 24px 0 224px; color:@gray-color; font-size: 12px; }
 .main-content footer>.pull-right{ padding-top: 17px; line-height: 1;}
 
 .main-content-header{ background: #fff; padding: 24px 24px 0 24px;}
@@ -293,6 +297,7 @@ header .pull-right a.icon-alert{ color: #fff; font-size: 24px; }
 
 .pad-t-34 .ivu-card-body{ min-height: 120px; overflow: hidden;}
 
+/*form page style*/
 .form-step-card{ overflow: hidden;}
 .form-step-card .form-step-wrap{ width: 100%; box-sizing: content-box; padding-left: 12%; margin: 20px 0;}
 .form-basic-wrap{ width: 60%; margin: 0 auto;}
@@ -303,6 +308,21 @@ header .pull-right a.icon-alert{ color: #fff; font-size: 24px; }
 .form-step-result .ivu-icon-ios-checkmark{ font-size: 80px; color: @success-color;}
 .form-step-sum{ width: 80%; padding: 20px; background: @btn-disable-bg;margin: 20px auto;}
 .form-step-sum .ivu-form-item:last-child{ margin-bottom: 0;}
+.ivu-card .ivu-table th{ border-top: none; background: @btn-disable-bg;}
+.bottom-btn{ position: fixed; padding: 12px 24px 0 24px; bottom: 0; left: 0; background: #fff; height: 56px; width: 100%; z-index: 19;}
+.main-content-bottom-btn{ padding-bottom: 126px;}
+.main-content-bottom-btn.main-content footer{ bottom: 56px;}
+
+/*详情页*/
+.profile-card .term{ line-height: 22px;  white-space: nowrap;  display: table-cell;}
+.profile-card .detail{ line-height: 22px;  width: 100%;  display: table-cell;}
+.profile-card  .term:after {  content: ":";  margin: 0 8px 0 2px;  position: relative;  top: -0.5px;  }
+.profile-header{ overflow: hidden; padding-left: 44px; position: relative;}
+.profile-logo{ margin-right: 16px; position: absolute; width: 28px; height: 28px; font-size: 0; left: 0; top: 2px; border-radius: 3px; overflow: hidden;}
+.profile-logo img{ width: 28px; height: 28px;}
+.profile-header .extra-content{ margin-left: 44px;  min-width: 242px; }
+
+
 
 /*--------iconfont style--------*/
 @font-face {

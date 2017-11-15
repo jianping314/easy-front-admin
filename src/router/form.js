@@ -28,6 +28,16 @@ const routers = [
       });
     },
     meta: {requiresAuth: false, title: '表单页-分步表单'}
+  },
+  {
+    path: '/form-advance',
+    name: 'form-advance',
+    component(resolve) {
+      require.ensure(['../views/form-advance.vue'], () => {
+        resolve(require('../views/form-advance.vue'));
+      });
+    },
+    meta: {requiresAuth: false, title: '表单页-高级表单'}
   }
 ];
 

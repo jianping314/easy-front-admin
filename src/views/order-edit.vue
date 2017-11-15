@@ -35,25 +35,25 @@
                  <div>
                    <p class="center-text">
                      <span class="gray-text">订单状态</span>
-                     <span class="font-20 display-block red-text">待付款</span>
+                     <span class="font-24 display-block red-text">待付款</span>
                    </p>
                  </div>
                  <div>
                    <p class="center-text">
                      <span class="gray-text">订单号</span>
-                     <span class="font-20 display-block">1033427</span>
+                     <span class="font-24 display-block">1033427</span>
                    </p>
                  </div>
                  <div>
                    <p class="center-text">
                      <span class="gray-text">订单编码</span>
-                     <span class="font-20 display-block">O201708023</span>
+                     <span class="font-24 display-block">O201708023</span>
                    </p>
                  </div>
                  <div>
                    <p class="center-text">
                      <span class="gray-text">订单金额</span>
-                     <span class="font-20 display-block red-text">￥29.8</span>
+                     <span class="font-24 display-block red-text">￥29.8</span>
                    </p>
                  </div>
                  <div class="center-text">

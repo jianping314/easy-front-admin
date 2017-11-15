@@ -88,7 +88,7 @@
                      test@example.com
                    </FormItem>
                    <FormItem label="转账金额：">
-                     <span class="font-20">500</span> （伍佰元整）
+                     <span class="font-24">500</span> （伍佰元整）
                    </FormItem>
                   <FormItem label="支付密码：" class="border-t-1 pad-t-24">
                      <Input style="width: 50%"  placeholder="Enter something..."></Input>
@@ -116,7 +116,7 @@
                      test@example.com
                    </FormItem>
                    <FormItem label="转账金额：">
-                     <span class="font-20">500</span> （伍佰元整）
+                     <span class="font-24">500</span> （伍佰元整）
                    </FormItem>
                  </Form>
                  <p class="center-text pad-tb-20">
