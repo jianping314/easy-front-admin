@@ -10,6 +10,7 @@ import client from './client';
 import goods from './goods';
 import order from './order';
 import form from './form';
+import list from './list';
 import profile from './profile';
 import store from '../store';
 
@@ -29,6 +30,7 @@ const routes = [
   ...order,
   ...form,
   ...profile,
+  ...list,
   {
     path: '*',
     component(resolve) {

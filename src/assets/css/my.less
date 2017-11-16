@@ -30,8 +30,10 @@
 .clearfix:after{ content: ''; display: block; clear: both;}
 
 //gap layout
+.mar-0{ margin: 0 !important}
 .mar-l-20{ margin-left: 20px;}
 .mar-l-6{ margin-left: 6px;}
+.mar-r-6{ margin-right: 6px;}
 .pad-t-14{ padding-top: 14px;}
 .pad-t-24{ padding-top: 24px;}
 .pad-t-34{ padding-top: 34px;}
@@ -46,7 +48,7 @@
 .display-block{ display: block;}
 
 //text size
-.font-14{ font-size: 12px !important; font-weight: normal;}
+.font-12{ font-size: 12px !important; font-weight: normal;}
 .font-20{ font-size: 20px;}
 .font-24{ font-size: 24px;}
 
@@ -322,6 +324,24 @@ header .pull-right a.icon-alert{ color: #fff; font-size: 24px; }
 .profile-logo img{ width: 28px; height: 28px;}
 .profile-header .extra-content{ margin-left: 44px;  min-width: 242px; }
 
+/*列表页*/
+.list-search-box{ padding: 0 30% 30px 30%;}
+.list-search-box .ivu-input-group-append{ cursor: pointer; background: @primary-color; color: @tooltip-color;padding: 6px 12px; border-color: @primary-color;}
+.form-row{ margin-bottom: 16px; padding-bottom: 12px; border-bottom: 1px solid @border-color-base;}
+.form-row .label{  height:32px; line-height: 32px; margin-right: 24px;  -webkit-box-flex: 0;  -ms-flex: 0 0 auto;  flex: 0 0 auto;  text-align: right;}
+.form-row .content{    -webkit-box-flex: 1;  -ms-flex: 1 1 0px;  flex: 1 1 0;  }
+.form-row .content .tag-select{  position: relative; line-height: 32px;-webkit-transition: all .3s;
+  -o-transition: all .3s; transition: all .3s; max-height: 32px; padding-right: 50px; overflow: hidden;}
+.form-row .content .tag-select.tag-select-show{   max-height: 200px; }
+.form-row .content .tag-select a{ position: absolute; top: 0; right: 0;}
+.form-row .content .tag-select .ivu-tag{ margin: 2px 12px 2px 0;}
+.ivu-card-body .form-row:last-child{ padding:0; margin: 0; border: 0;}
+
+.list-cover-card{ background: @tooltip-color; cursor: pointer; border-radius: 4px; overflow: hidden; margin-bottom: 20px;}
+.list-cover-card:hover{ box-shadow: 0 0 8px rgba(0,0,0,0.16)}
+.list-cover-card .card-body{ padding: 20px;}
+.list-cover-card .card-content h3{ padding-bottom: 6px;}
+.list-cover-card .card-content p{ padding-bottom: 6px;}
 
 
 /*--------iconfont style--------*/

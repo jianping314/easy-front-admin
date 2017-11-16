@@ -78,7 +78,7 @@
            </Card>
 
            <Card :bordered="false" dis-hover>
-             <p slot="title"> 商品图片 <span class="gray-text font-14">最多20张，默认第一张图片作为主图，可以拖动图片调整</span></p>
+             <p slot="title"> 商品图片 <span class="gray-text font-12">最多20张，默认第一张图片作为主图，可以拖动图片调整</span></p>
            <div class="goods-upload-list" v-for="item in uploadList">
              <template v-if="item.status === 'finished'">
                <img :src="item.url">
