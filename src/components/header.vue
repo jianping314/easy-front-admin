@@ -1,14 +1,16 @@
 <template>
      <header>
-         <a href="#" class="logo pull-left"><img src="../assets/images/logo-header.png" alt=""></a>
-         <p class="pull-left">
+         <div class="logo-wrap pull-left" :class="{'logo-wrap-mini':navStatus }">
+           <a href="#" class="logo pull-left"><img src="../assets/images/logo-header.png" alt=""></a>
+           <p class="pull-left">
            <span>
              <slot>{{title}}</slot>
            </span>
-           <span>
-             <slot>{{titleEn}}</slot>
-           </span>
-         </p>
+           </p>
+         </div>
+
+       <i class="icon" :class="navStatus? 'icon-menu-right':'icon-menu-left'" @click="navMini"></i>
+
          <div class="pull-right">
            <Badge count="2" class="header-alert">
              <Poptip placement="bottom" width="336">
@@ -134,9 +136,16 @@
         type: String,
         default: '官网设置'
       },
+      navStatus: {
+        type: Boolean,
+        default: false
+      },
       titleEn: {
         type: String,
         default: 'Official Site Setting'
+      },
+      navMini: {
+          type: Function
       }
     },
     methods: {

@@ -1,19 +1,43 @@
 <template>
   <div class="page">
-      <ef-header title="列表页" titleEn="Goods Management"></ef-header>
+      <ef-header title="列表页" :navStatus=navStatus :navMini=navMini></ef-header>
 
-     <div class="main-wrap">
+     <div class="main-wrap" :class="{'main-wrap-mini':navStatus}">
        <div class="nav-wrap">
-         <Menu :theme="theme2" width="200px" active-name="2" :open-names="['1']">
-           <MenuItem name="1" @click="jump('#/home/')">
-             <i class="icon icon-banner"></i>
-             查询表格
-           </MenuItem>
+         <Menu :theme="theme2" width="200px" active-name="2" >
+           <Submenu name="1">
+             <template slot="title">
+               <i class="icon icon-banner"></i>
+               <span class="menu-title">查询表格</span>
+             </template>
+             <MenuItem name="2-1">新增用户</MenuItem>
+             <MenuItem name="2-2">活跃用户</MenuItem>
+           </Submenu>
            <MenuItem name="2">
              <i class="icon icon-cat"></i>
-             搜索列表页
+             <span class="menu-title">搜索列表页</span>
            </MenuItem>
          </Menu>
+
+         <div class="nav-dropdown">
+           <Dropdown placement="right-start">
+             <a href="javascript:void(0)">
+               <i class="icon icon-banner"></i>
+             </a>
+             <DropdownMenu slot="list">
+               <DropdownItem>新增用户</DropdownItem>
+               <DropdownItem>活跃用户</DropdownItem>
+             </DropdownMenu>
+           </Dropdown>
+           <Dropdown placement="right-start" class="menu-current">
+             <a href="javascript:void(0)">
+               <i class="icon icon-cat"></i>
+             </a>
+             <DropdownMenu slot="list">
+               <DropdownItem>搜索列表页</DropdownItem>
+             </DropdownMenu>
+           </Dropdown>
+         </div>
        </div>
        <div class="main-content">
          <div class="main-content-box">
@@ -243,6 +267,7 @@
     data () {
       return {
         theme2: 'light',
+        navStatus: false,
         value4: '',
         listShow: false,
         cityList: [
@@ -381,6 +406,9 @@
       },
       listShowHandle() {
         this.listShow = !this.listShow;
+      },
+      navMini() {
+        this.navStatus = !this.navStatus;
       }
     }
   };
