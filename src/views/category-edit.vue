@@ -1,8 +1,8 @@
 <template>
   <div class="page">
-      <ef-header title="商品管理" titleEn="Goods Management"></ef-header>
+      <ef-header title="商品管理" :navStatus=navStatus :navMini=navMini></ef-header>
 
-     <div class="main-wrap">
+     <div class="main-wrap" :class="{'main-wrap-mini':navStatus}">
        <div class="nav-wrap">
          <Menu :theme="theme2" width="200px" active-name="2" :open-names="['1']">
            <MenuItem name="1" @click="jump('#/home/')">
@@ -38,7 +38,6 @@
            </div>
 
            </Card>
-
          </div>
          <footer class="clearfix">
             <span class="pull-left">2017 © Easy Front</span>
@@ -46,9 +45,6 @@
          </footer>
        </div>
      </div>
-
-
-
   </div>
 </template>
 
@@ -64,11 +60,12 @@
     data () {
       return {
         theme2: 'light',
+        navStatus: false,
         data5: [
           {
             title: 'parent 1',
             expand: true,
-            render: (h, {root, node, data}) => {
+            render: (h, { root, node, data }) => {
               return h('span', {
                 style: {
                   display: 'inline-block',
@@ -76,7 +73,7 @@
                 }
               }, [
                 h('span', [
-                  h('Icon', {
+                  h('icon', {
                     props: {
                       type: 'ios-folder-outline'
                     },
@@ -99,11 +96,11 @@
                       type: 'primary'
                     }),
                     style: {
-                      width: '52px'
+                      width: '88px'
                     },
                     on: {
                       click: () => {
-                        this.append(data);
+                          this.append(data);
                       }
                     }
                   })
@@ -163,14 +160,24 @@
           }
         }, [
           h('span', [
-            h('Icon', {
-              props: {
-                type: 'ios-paper-outline'
-              },
-              style: {
-                marginRight: '8px'
-              }
-            }),
+            // h('Icon', {
+              // props: {
+                // type: 'ios-paper-outline'
+             // },
+              // style: {
+                // marginRight: '8px'
+              // }
+            // }),
+            h('img', {
+                style: {
+                  marginRight: '8px',
+                  width: '10px',
+                  height: '10px'
+                },
+                attrs: {
+                    src: 'https://gw.alipayobjects.com/zos/rmsportal/eHBsAsOrrJcnvFlnzNTT.png'
+                }
+              }),
             h('span', data.title)
           ]),
           h('span', {
@@ -182,13 +189,28 @@
           }, [
             h('Button', {
               props: Object.assign({}, this.buttonProps, {
+                icon: 'edit'
+              }),
+              style: {
+                marginRight: '8px'
+              },
+              on: {
+                click: () => {
+                  this.append(data);
+                }
+              }
+            }),
+            h('Button', {
+              props: Object.assign({}, this.buttonProps, {
                 icon: 'ios-plus-empty'
               }),
               style: {
                 marginRight: '8px'
               },
               on: {
-                click: () => { this.append(data); }
+                click: () => {
+                    this.append(data);
+                }
               }
             }),
             h('Button', {
@@ -196,7 +218,9 @@
                 icon: 'ios-minus-empty'
               }),
               on: {
-                click: () => { this.remove(root, node, data); }
+                click: () => {
+                    this.remove(root, node, data);
+                }
               }
             })
           ])
@@ -215,10 +239,18 @@
         const parent = root.find(el => el.nodeKey === parentKey).node;
         const index = parent.children.indexOf(data);
         parent.children.splice(index, 1);
+      },
+      navMini() {
+        this.navStatus = !this.navStatus;
       }
     }
   };
+
 </script>
+
+
+
+
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
